@@ -8,16 +8,16 @@
             </a>
         </li>
         <li>
-            <a routerLink="/lessons">Lessons</a>
+          <a routerLink="/lessons">Lessons</a>
         </li>
-        <li>
-            <a routerLink="/signup">Sign Up</a>
+        <li *ngIf="isLoggedOut$ | async">
+          <a routerLink="/signup">Sign Up</a>
         </li>
-        <li>
-            <a routerLink="/login">Login</a>
+        <li *ngIf="isLoggedOut$ | async">
+          <a routerLink="/login">Login</a>
         </li>
-        <li>
-            <a>Logout</a>
+        <li *ngIf="isLoggedIn$ | async">
+          <a>Logout</a>
         </li>
     </ul>
 
