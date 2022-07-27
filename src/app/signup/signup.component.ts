@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
             this.authService.signUp(val.email, val.password)
                 .subscribe(
                     () => console.log("User created successfully"),
-                    response => this.errors = response.error.errors
+                    response => {this.errors = response.error.errors}
 
                 );
 
