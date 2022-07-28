@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
-import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'signup',
@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
         digits: 'At least one numeric character',
         "err_user": 'Could not create user'
     };
+  router: any;
 
 
     constructor(private fb: FormBuilder, private authService: AuthService) {
@@ -43,6 +44,7 @@ export class SignupComponent implements OnInit {
 
             this.authService.signUp(val.email, val.password)
                 .subscribe(
+
                     () => console.log("User created successfully"),
                     response => this.errors = response.error.errors
                 );
