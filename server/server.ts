@@ -6,8 +6,8 @@ import * as fs from 'fs';
 import * as https from 'https';
 import {readAllLessons} from "./read-all-lessons.route";
 import {createUser} from "./create-user.route";
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+import bodyParser = require('body-parser');
+import cookieParser = require('cookie-parser');
 
 
 const app: Application = express();
@@ -40,14 +40,14 @@ if (options.secure) {
     }, app);
 
     // launch an HTTPS Server. Note: this does NOT mean that the application is secure
-    httpsServer.listen(9000, () => console.log("HTTPS Secure Server running at https://localhost:" + httpsServer.address().port));
+    httpsServer.listen(9000, () => console.log("HTTPS Secure Server running at https://localhost:" + httpsServer.address()));
 
 }
 else {
 
     // launch an HTTP Server
     const httpServer = app.listen(9000, () => {
-        console.log("HTTP Server running at https://localhost:" + httpServer.address().port);
+        console.log("HTTP Server running at https://localhost:" + httpServer.address());
     });
 
 }
